@@ -1,0 +1,92 @@
+.header {
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.103);
+  margin-bottom: 10px;
+
+  .header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      cursor: pointer;
+      color: red;
+      font-size: 60px;
+      font-weight: 600;
+      font-family: "Playwrite Cuba";
+
+      span {
+        color: black;
+        font-size: 45px;
+      }
+    }
+
+    .header__block {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .header__btn {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
+        input {
+          width: 450px;
+          height: 40px;
+          border: 1px solid black;
+          border-radius: 5px 0 0 5px;
+
+          color: black;
+          font-size: 18px;
+          font-family: "inter";
+          padding-left: 10px;
+        }
+
+        .header__search {
+          width: 50px;
+          height: 40px;
+          font-size: 30px;
+          border: 1px solid;
+          border-radius: 0 5px 5px 0;
+          background-color: rgba(128, 128, 128, 0.184);
+          cursor: pointer;
+        }
+      }
+
+      .header__sun {
+        font-size: 35px;
+        cursor: pointer;
+      }
+
+      .header__moon {
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+      .header__trans {
+        font-size: 28px;
+        cursor: pointer;
+      }
+
+      .header__basket {
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+      .sity__content {
+        position: absolute;
+        top: 13%;
+        left: 43%;
+        z-index: 99;
+
+        .header__sity {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.119);
+        }
+      }
+    }
+  }
+}

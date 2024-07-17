@@ -1,0 +1,12 @@
+.marguee {
+  height: 190px;
+  
+  .marquee__content {
+    img {
+      width: 250px;
+      height: 150px;
+      object-fit: cover;
+      padding: 0 6px;
+    }
+  }
+}
