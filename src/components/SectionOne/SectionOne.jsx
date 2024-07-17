@@ -1,52 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+import { addressBtn } from "../../data/address";
+
+import { IoLocationOutline } from "react-icons/io5";
 
 import "./SectionOne.scss";
 
 function SectionOne() {
-  const [value, setValue] = useState();
-  const [data, setData] = useState();
+  const [value, setValue] = useState([]);
+  const [data, setData] = useState([]);
 
-  function handleClick() {
-    setValue(!value);
-  }
+  useEffect(() => {
+    setValue(addressBtn);
+    setData([...new Set(addressBtn.map((item) => item.category))]);
+  }, []);
 
-  function dataClick() {
-    setData(!data);
-  }
+  const get__filter = (str) => {
+    const filterData = addressBtn.filter((item) => item.category === str);
+    setValue(filterData);
+  };
 
   return (
     <div className="sectionone">
       <div className="container">
         <nav className="sectionone__nav">
           <ul>
-            {value ? (
-              <>
-                <h3>Курманжан датка 34б</h3>
-              </>
-            ) : (
-              <li onClick={() => handleClick()}>Бишкек</li>
-            )}
-            {data ? (
-              <>
-                <h3>Запатный 3</h3>
-                <h3>Запатный 4</h3>
-                <h3>Запатный 5</h3>
-              </>
-            ) : (
-              <li onClick={() => dataClick()}>Ош</li>
-            )}
-            <li>Чүй</li>
-            <li>Талас</li>
-            <li>Нарын</li>
-            <li>Баткен</li>
-            <li>Ысык-Көл</li>
-            <li>Жалал-Абад</li>
+            {data.map((item, index) => (
+              <li key={index} onClick={() => get__filter(item)}>
+                {item}
+              </li>
+            ))}
+            <li onClick={() => setValue(addressBtn)}>Clear</li>
           </ul>
-
-          <h1>
-            <span>eli</span>.burger 7 областа...
-          </h1>
         </nav>
+        <div className="sectionone__data">
+          {value.map((item) => (
+            <div key={item.id} className="data__location">
+              <IoLocationOutline />
+              <h1>{item.name}</h1>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

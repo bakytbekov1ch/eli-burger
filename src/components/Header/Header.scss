@@ -73,20 +73,6 @@
         font-size: 25px;
         cursor: pointer;
       }
-
-      .sity__content {
-        position: absolute;
-        top: 13%;
-        left: 43%;
-        z-index: 99;
-
-        .header__sity {
-          position: absolute;
-          top: 0;
-          left: 0;
-          background-color: rgba(0, 0, 0, 0.119);
-        }
-      }
     }
   }
 }

@@ -140,6 +140,7 @@
           padding: 10px;
           border-radius: 5px;
           position: relative;
+          transition: 0.3s; /* Add transition here */
 
           img {
             width: 100%;
@@ -150,16 +151,18 @@
           .manu__buton {
             width: 203px;
             height: 30px;
+            color: red;
             border-radius: 5px;
             font-size: 18px;
             font-weight: 400;
             letter-spacing: 0.6px;
             cursor: pointer;
-            transition: 2s;
-            display: none;
+            visibility: hidden;
             position: absolute;
             top: 50%;
             left: 10px;
+            transition: visibility 0.3s, opacity 0.3s;
+            opacity: 0;
           }
 
           .menu__mx {
@@ -207,9 +210,8 @@
         }
 
         .menu__product:hover .manu__buton {
-          color: red;
-          display: block;
-          transition: 2s;
+          visibility: visible;
+          opacity: 1;
         }
       }
     }

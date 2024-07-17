@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { IoSearch } from "react-icons/io5";
 import { IoSunnySharp } from "react-icons/io5";
@@ -9,11 +9,8 @@ import { SlLocationPin } from "react-icons/sl";
 
 import "./Header.scss";
 import { Link } from "react-router-dom";
-import SectionOne from "../SectionOne/SectionOne";
 
 function Header() {
-  const [sity, setSity] = useState();
-
   return (
     <div className="header">
       <div className="container">
@@ -32,17 +29,9 @@ function Header() {
             <IoSunnySharp className="header__sun" />
             <BsMoonStarsFill className="header__moon" />
             <SiGoogletranslate className="header__trans" />
-            <SlLocationPin
-              onClick={() => setSity(!sity)}
-              className="header__basket"
-            />
-            <div className="sity__content">
-              {sity && (
-                <div className="header__sity">
-                  <SectionOne />
-                </div>
-              )}
-            </div>
+            <Link to="sectionone">
+              <SlLocationPin className="header__basket" />
+            </Link>
 
             <Link to="/basket">
               <SlBasket className="header__basket" />
